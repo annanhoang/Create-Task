@@ -54,6 +54,41 @@ def scarecrow_brain():
                 print("You give it back to him and he promises to help you find your ruby shoes.")
             else:
                 return 0
+scarecrow_brain()
+def tin_man_heart():
+    def cave():
+        print("You all head into the cave and see written in the wall '1902'")
+        print("As you wind through the narrow walls of the cave it leads into a big room with a waterfall!")
+        print("You see a chest similar to the one the Scarecrow had but this one has a lock!")
+        lock()
+
+    def lock():
+        password = 1902
+        response = input("What is the password to open the chest? ")
+        if response == password:
+            print("You hear a click and the chest opens to a glowing heart!")
+            print("You give it back to the Tin Man, he thanks you and agrees to help you get home!")
+        else:
+            print("Wrong password! Try again!")
+            lock()
+    print(
+        "You and the Scarecrow keep following the yellow brick road and see a Tin Man sitting on a bench and oil besides him. ")
+    print("You use the oil to free him!")
+    print("He asks you to help him find a heart and you agree!")
+    print("You all keep walking along the road until you see a cave next to a forest. The cave is oddly glowing red.")
+    response = input("Do you want to go in? ")
+    if response == "yes" or response == "Yes":
+        cave()
+    else:
+        print("Too bad, suck it up buttercup, you have to go in.")
+        cave()
+tin_man_heart()
+def lion_nerve():
+    print("As you walk out of the cave and into the forest you mean a cowardly Lion!")
+    print("He asks you to help him find his courage since he's scared of everything and you want to help him because he a cutie (not based on the movie, he NOT a cutie!")
+    print("He tells you that he lost ")
+
+
 
 
 
