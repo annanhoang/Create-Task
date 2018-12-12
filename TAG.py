@@ -1,5 +1,5 @@
 def dead():
-    print("Sorry, you died and can never return home. :(")
+    print("Sorry! Looks like you're stuck forever. :(")
     exit(0)
 
 
@@ -8,9 +8,10 @@ def invalid():
 
 
 # start with introduction
-print("You've been magically transported to the World of Oz.")
-print("You must find the ruby shoes and remember to be kind "
-      "in order to return home but if you die you're stuck in this world forever")
+def intro():
+    print("You've been magically transported to the World of Oz.")
+    print("You must find the ruby shoes and remember to be kind "
+          "in order to return home but if you die you're stuck in this world forever")
 
 
 # road = int(input("Enter left for the worn down path or 2 for the nicer path: "))
@@ -30,7 +31,6 @@ def road():
     else:
         invalid()
         road()
-road()
 
 
 def scarecrow_brain():
@@ -60,16 +60,16 @@ def scarecrow_brain():
                 print("You hit a dead end go back the other way and find a chest!")
                 print("You open the chest and find the scarecrow's brain in a jar!")
                 print("You give it back to him and he promises to help you find your ruby shoes.")
-scarecrow_brain()
 
 
 def tin_man_heart():
+# made cave a function inside the function in order to restate prompt of entering cave
     def cave():
         print("You all head into the cave and see written in the wall '1902'")
         print("As you wind through the narrow walls of the cave it leads into a big room with a waterfall!")
         print("You see a chest similar to the one the Scarecrow had but this one has a lock!")
         lock()
-
+# made lock a function in order to restate asking password if incorrect
     def lock():
         password = 1902
         password_response = input("What is the password to open the chest? ")
@@ -79,7 +79,7 @@ def tin_man_heart():
         else:
             print("Wrong password! Try again!")
             lock()
-
+#introducing puzzle
     print("You and the Scarecrow keep following the yellow brick road "
           "and see a Tin Man sitting on a bench and oil besides him. ")
     print("You use the oil to free him!")
@@ -91,15 +91,17 @@ def tin_man_heart():
     else:
         print("Too bad, suck it up buttercup, you have to go in.")
         cave()
-tin_man_heart()
 
 
-def lion_nerve():
+def lion_courage():
+#introducing puzzle for courage
     print("As you walk out of the cave and into the forest you meet a cowardly Lion!")
     print("He asks you to help him find his courage since he's scared of everything"
           "and you want to help him because he a cutie (not based on the movie, he NOT a cutie!")
     print("He tells you that flying monkeys stole his courage and hid it somewhere in the forest.")
     print("You all continue down the path until it diverges into 3.")
+
+#in order to restate prompt if invalid response
     def road_2():
         response = input("Do you want to go to the left, middle, or left?")
         if response == "left" or response == "Left":
@@ -116,17 +118,35 @@ def lion_nerve():
         else:
             invalid()
             road_2()
-lion_nerve()
 
 
 def ruby_shoes():
+#introducing castle and puzzle
     print("You all keep traveling on the yellow brick road and it takes you to an emerald castle "
           "where you meet Glinda the Good Witch of the North")
     print("She tells you that the ruby slippers are hidden inside the castle.")
+#separate function in order to restate it if invalid
     def castle_maze():
-        print("You see a grand staircase, do you want to go up or go to the dining room? ")
-        print("")
+        response = input(("You see a grand staircase, do you want to go up or go to the dining room? "))
+        if response == "up" or "Up":
+            print("You make it upstairs to the library and there's an old wizard reading.")
+            print("He tells you that he's been watching your adventure, he challenges you to complete a timed quiz "
+                  "in order to win the ruby shoes for you to go home.")
+            def quiz():
+                response = input("Do you want to take it?")
+                if response == "yes" or response == "Yes":
+                    
 
+
+
+#easier to read and see order of game
+def main():
+    intro()
+    road()
+    scarecrow_brain()
+    tin_man_heart()
+    lion_courage()
+    ruby_shoes()
 
 
 
