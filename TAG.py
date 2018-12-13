@@ -45,7 +45,7 @@ def scarecrow_brain():
         print("The right path leads to a dead end! You head back and go left instead.")
     else:
         print("You keep heading down the left path until you hit a dead and turn right.")
-        print("This way leads to another diversion, left or right? ")
+        response = input(("This way leads to another diversion, left or right? "))
         if response == "left" or response == "Left":
             print("You hit a dead end and head back the other way.")
         elif response == "right" or response == "Right":
@@ -105,7 +105,7 @@ def lion_courage():
     def road_2():
         response = input("Do you want to go to the left, middle, or left?")
         if response == "left" or response == "Left":
-            print("You ran into a flying monkey and it almost kills you!")
+            print("You ran into a flying monkey and it almost kills you! You run back.")
             road_2()
         elif response == "right" or response == "Right":
             print("You found his courage!")
@@ -118,6 +118,7 @@ def lion_courage():
         else:
             invalid()
             road_2()
+    road_2()
 
 
 def ruby_shoes():
@@ -135,6 +136,13 @@ def ruby_shoes():
             def quiz():
                 response = input("Do you want to take it?")
                 if response == "yes" or response == "Yes":
+                    import time
+                    start_time = time.time()
+                    timer = 0
+                    correct = "corn maze"
+
+
+
                     
 
 
@@ -147,7 +155,7 @@ def main():
     tin_man_heart()
     lion_courage()
     ruby_shoes()
-
+main()
 
 
 
