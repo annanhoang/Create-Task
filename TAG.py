@@ -62,12 +62,11 @@ def scarecrow_brain():
     if response == "right" or response == "Right":
         print("The right path leads to a dead end! You head back and go left instead.")
         time.sleep(1)
-    else:
         print("You keep heading down the left path until you hit a dead and turn right.")
         time.sleep(1)
-        response = input("This way leads to another diversion, left or right? ")
+        response_2 = input("This way leads to another diversion, left or right? ")
         time.sleep(1)
-        if response == "left" or response == "Left":
+        if response_2 == "left" or response_2 == "Left":
             print("You hit a dead end and head back the other way.")
             time.sleep(1)
             print("You walk down the right path "
@@ -77,11 +76,45 @@ def scarecrow_brain():
             time.sleep(1)
             print("You give it back to him and he promises to help you find your ruby shoes.")
             time.sleep(1)
-        elif response == "right" or response == "Right":
-            response = input("You keep walking and turn with the corner. "
+        elif response_2 == "right" or response_2 == "Right":
+            response_3 = input("You keep walking and turn with the corner. "
                              "As you keep walking you can either turn right or go forward. ")
             time.sleep(1)
-            if response == "right" or "Right":
+            if response_3 == "right" or "Right":
+                print("You walk down the right path "
+                      "and follow the only turns until you see a huge square area with a chest!")
+                time.sleep(1)
+                print("You open the chest and find the scarecrow's brain in a jar!")
+                time.sleep(1)
+                print("You give it back to him and he promises to help you find your ruby shoes.")
+                time.sleep(1)
+            else:
+                print("You hit a dead end go back the other way and find a chest!")
+                time.sleep(1)
+                print("You open the chest and find the scarecrow's brain in a jar!")
+                time.sleep(1)
+                print("You give it back to him and he promises to help you find your ruby shoes.")
+                time.sleep(1)
+    else:
+        print("You keep heading down the left path until you hit a dead and turn right.")
+        time.sleep(1)
+        response_2 = input("This way leads to another diversion, left or right? ")
+        time.sleep(1)
+        if response_2 == "left" or response_2 == "Left":
+            print("You hit a dead end and head back the other way.")
+            time.sleep(1)
+            print("You walk down the right path "
+                  "and follow the only turns until you see a huge square area with a chest!")
+            time.sleep(1)
+            print("You open the chest and find the scarecrow's brain in a jar!")
+            time.sleep(1)
+            print("You give it back to him and he promises to help you find your ruby shoes.")
+            time.sleep(1)
+        elif response_2 == "right" or response_2 == "Right":
+            response_3 = input("You keep walking and turn with the corner. "
+                             "As you keep walking you can either turn right or go forward. ")
+            time.sleep(1)
+            if response_3 == "right" or "Right":
                 print("You walk down the right path "
                       "and follow the only turns until you see a huge square area with a chest!")
                 time.sleep(1)
@@ -111,80 +144,78 @@ def tin_man_heart():
 
     # made lock a function in order to restate asking password if incorrect
     def lock():
-        password = 1902
-        password_response = input("What is the password to open the chest? ")
+        password = int("1902")
+        password_response = int(input("What is the password to open the chest? "))
+        time.sleep(1)
         if password_response == password:
             print("You hear a click and the chest opens to a glowing heart!")
+            time.sleep(1)
             print("You give it back to the Tin Man, he thanks you and agrees to help you get home!")
+            time.sleep(1)
         else:
             print("Wrong password! Try again!")
+            time.sleep(1)
             lock()
         # introducing puzzle
 
     print("You and the Scarecrow keep following the yellow brick road "
           "and see a Tin Man sitting on a bench and oil besides him. ")
+    time.sleep(1)
     print("You use the oil to free him!")
+    time.sleep(1)
     print("He asks you to help him find a heart and you agree!")
+    time.sleep(1)
     print("You all keep walking along the road until you see a cave next to a forest. The cave is oddly glowing red.")
+    time.sleep(1)
     response = input("Do you want to go in? ")
+    time.sleep(1)
     if response == "yes" or response == "Yes":
         cave()
     else:
         print("Too bad, suck it up buttercup, you have to go in.")
+        time.sleep(1)
         cave()
 
 
 def lion_courage():
-    # introducing puzzle for courage
-    print("As you walk out of the cave and into the forest you meet a cowardly Lion!")
-    print("He asks you to help him find his courage since he's scared of everything"
-          "and you want to help him because he a cutie (not based on the movie, he NOT a cutie!")
-    print("He tells you that flying monkeys stole his courage and hid it somewhere in the forest.")
-    print("You all continue down the path until it diverges into 3.")
-
     # in order to restate prompt if invalid response
     def road_2():
-        response = input("Do you want to go to the left, middle, or left?")
+        response = input("Do you want to go to the left, middle, or right?" )
+        time.sleep(1)
         if response == "left" or response == "Left":
             print("You ran into a flying monkey and it almost kills you! You run back.")
+            time.sleep(1)
             road_2()
         elif response == "right" or response == "Right":
             print("You found his courage!")
+            time.sleep(1)
             print("He's so grateful that he agrees to help you find the ruby shoes!")
             print("You now have a team of a smart Scarecrow, a kind Tin Man, and even a brave Lion to help you!")
+            time.sleep(1)
         elif response == "middle" or response == "Middle":
             print("You ran into a flying monkey and it attacks you!")
+            time.sleep(1)
             print("The Scarecrow is ripped apart, the Tin Man was crumpled, and the Lion ran away!")
+            time.sleep(1)
             dead()
         else:
             invalid()
             road_2()
-
+    # introducing puzzle for courage
+    print("As you walk out of the cave and into the forest you meet a cowardly Lion!")
+    time.sleep(1)
+    print("He asks you to help him find his courage since he's scared of everything"
+          "and you want to help him because he a cutie (not based on the movie, he NOT a cutie!")
+    time.sleep(1)
+    print("He tells you that flying monkeys stole his courage and hid it somewhere in the forest.")
+    time.sleep(1)
+    print("You all continue down the path until it diverges into 3.")
+    time.sleep(1)
     road_2()
 
-
-def ruby_shoes():
-    # introducing castle and puzzle
-    print("You all keep traveling on the yellow brick road and it takes you to an emerald castle "
-          "where you meet Glinda the Good Witch of the North")
-    print("She tells you that the ruby slippers are hidden inside the castle.")
-
-    # separate function in order to restate it if invalid
-    def castle_maze():
-        response = input(("You see a grand staircase, do you want to go up or go to the dining room? "))
-        if response == "up" or "Up":
-            print("You make it upstairs to the library and there's an old wizard reading.")
-            print("He tells you that he's been watching your adventure, he challenges you to complete a timed quiz "
-                  "in order to win the ruby shoes for you to go home.")
-
-            def quiz():
-                response = input("Do you want to take it?")
-                if response == "yes" or response == "Yes":
-                    import time
-                    start_time = time.time()
-                    timer = 0
-                    correct = "corn maze"
-
+def congrats():
+    print("You were kind and helped everyone! They led you to the ruby shoes and they transported you home!")
+    exit (0)
 
 # easier to read and see order of game
 def main():
@@ -193,8 +224,7 @@ def main():
     scarecrow_brain()
     tin_man_heart()
     lion_courage()
-    ruby_shoes()
-
+    congrats()
 
 main()
 
